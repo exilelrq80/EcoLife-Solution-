@@ -280,7 +280,10 @@ button:hover {
 }
 
 /* Media Queries for smaller screens (Mobile Landscape and below) */
-@media (max-width: 480px) {
+@media (max-width: 768px) {
+  body {
+    background-image: url(https://raw.githubusercontent.com/exilelrq80/EcoLife-Solution-/refs/heads/main/img/BG0.jpg);
+  }
     .main h2 {
         font-size: 1em;
     }
