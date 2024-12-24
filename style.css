@@ -50,7 +50,7 @@ section {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    background: url(img/bG0.jpg) no-repeat;
+    background: url(https://raw.githubusercontent.com/exilelrq80/EcoLife-Solution-/refs/heads/main/img/BG0.jpg) no-repeat;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
