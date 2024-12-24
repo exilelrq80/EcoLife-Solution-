@@ -168,7 +168,7 @@ section {
 .cradcn {
     width: 100%;
     min-height: 10vh;
-    background: url(https://raw.githubusercontent.com/exilelrq80/EcoLife-Solution-/refs/heads/main/img/BG0.jpg)) no-repeat;
+    background: url(https://raw.githubusercontent.com/exilelrq80/EcoLife-Solution-/refs/heads/main/img/BG0.jpg) no-repeat; 
     background-size: cover;
     display: flex;
     flex-direction: column;
