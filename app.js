@@ -53,21 +53,28 @@ document.getElementById('decrypt-button').addEventListener('click', async () => 
 });
 // تعديل جزء التشفير ليشمل إرسال البيانات المشفرة عبر نموذج الاتصال
 // Decrypt the message using the private key
-document.getElementById('decrypt-button').addEventListener('click', async () => {
-    try {
-        const encryptedBase64 = document.getElementById('output').innerText.replace("Encrypted Message: ", "");
-        const encryptedBytes = Uint8Array.from(atob(encryptedBase64), c => c.charCodeAt(0));
+document.getElementById('encrypt-button').addEventListener('click', async () => {
+    const message = document.getElementById('message').value;
+    const encodedMessage = new TextEncoder().encode(message);
 
-        const decrypted = await window.crypto.subtle.decrypt(
-            { name: "RSA-OAEP" },
-            privateKey,
-            encryptedBytes
-        );
+    const encrypted = await window.crypto.subtle.encrypt(
+        { name: "RSA-OAEP" },
+        publicKey,
+        encodedMessage
+    );
 
-        const decodedMessage = new TextDecoder().decode(decrypted);
-        document.getElementById('output').innerText = `Decrypted Message: ${decodedMessage}`;
-    } catch (error) {
-        console.error('Error during decryption:', error);
-        document.getElementById('output').innerText = "Decryption failed. Please check the input.";
-    }
+    const encryptedBase64 = btoa(String.fromCharCode(...new Uint8Array(encrypted)));
+
+    // إرسال البيانات المشفرة إلى الخادم عبر POST
+    fetch('/decrypt', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ encryptedMessage: encryptedBase64 })
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Decrypted message:', data.decryptedMessage);
+    });
 });
