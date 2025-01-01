@@ -228,6 +228,46 @@ button:hover {
     background-color: #21867a;
 }
 
+/* Custom Form and Output Section */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    line-height: 1.6;
+}
+
+h1 {
+    color: #2c3e50;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+}
+
+button {
+    margin-right: 10px;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+#output {
+    background-color: #ecf0f1;
+    padding: 10px;
+    border: 1px solid #bdc3c7;
+}
+
 /* Media Queries for Mobile */
 @media (max-width: 768px) {
     header {
@@ -279,11 +319,12 @@ button:hover {
     }
 }
 
-/* Media Queries for smaller screens (Mobile Landscape and below) */
+/* Media Queries for smaller screens */
 @media (max-width: 768px) {
-  body {
-    background-image: url(https://raw.githubusercontent.com/exilelrq80/EcoLife-Solution-/refs/heads/main/img/BG0.jpg);
-  }
+    body {
+        background-image: url(https://raw.githubusercontent.com/exilelrq80/EcoLife-Solution-/refs/heads/main/img/BG0.jpg);
+    }
+
     .main h2 {
         font-size: 1em;
     }
@@ -310,3 +351,4 @@ button:hover {
         font-size: 1.1em;
     }
 }
+
