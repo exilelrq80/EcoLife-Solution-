@@ -52,34 +52,22 @@ document.getElementById('decrypt-button').addEventListener('click', async () => 
     document.getElementById('output').innerText = `Decrypted Message: ${decodedMessage}`;
 });
 // تعديل جزء التشفير ليشمل إرسال البيانات المشفرة عبر نموذج الاتصال
-document.getElementById('contact-form').addEventListener('submit', async (event) => {
-    event.preventDefault(); // منع الإرسال العادي للنموذج
-    
-    const message = document.getElementById('message').value;
-    const encodedMessage = new TextEncoder().encode(message);
+// Decrypt the message using the private key
+document.getElementById('decrypt-button').addEventListener('click', async () => {
+    try {
+        const encryptedBase64 = document.getElementById('output').innerText.replace("Encrypted Message: ", "");
+        const encryptedBytes = Uint8Array.from(atob(encryptedBase64), c => c.charCodeAt(0));
 
-    const encrypted = await window.crypto.subtle.encrypt(
-        { name: "RSA-OAEP" },
-        publicKey,
-        encodedMessage
-    );
+        const decrypted = await window.crypto.subtle.decrypt(
+            { name: "RSA-OAEP" },
+            privateKey,
+            encryptedBytes
+        );
 
-    const encryptedBase64 = btoa(String.fromCharCode(...new Uint8Array(encrypted)));
-
-    // إرسال البيانات المشفرة عبر AJAX أو Fetch
-    fetch('server-url', {
-        method: 'POST',
-        body: JSON.stringify({ encryptedMessage: encryptedBase64 }),
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    })
-    .then(response => response.json())
-    .then(data => {
-        console.log('Message sent successfully:', data);
-    })
-    .catch(error => {
-        console.error('Error sending message:', error);
-    });
+        const decodedMessage = new TextDecoder().decode(decrypted);
+        document.getElementById('output').innerText = `Decrypted Message: ${decodedMessage}`;
+    } catch (error) {
+        console.error('Error during decryption:', error);
+        document.getElementById('output').innerText = "Decryption failed. Please check the input.";
+    }
 });
-
