@@ -1,20 +1,30 @@
 const express = require('express');
+const crypto = require('crypto');
 const app = express();
 const port = 3000;
 
 app.use(express.json());
 
+const privateKey = `-----BEGIN PRIVATE KEY-----
+...Your private key here...
+-----END PRIVATE KEY-----`;
+
 app.post('/decrypt', (req, res) => {
     const encryptedMessage = req.body.encryptedMessage;
+    const buffer = Buffer.from(encryptedMessage, 'base64');
 
-    // هنا يتم فك التشفير باستخدام المفتاح الخاص
-    // هذا مجرد مثال بسيط لفك التشفير
+    // فك تشفير الرسالة باستخدام المفتاح الخاص
+    crypto.privateDecrypt(privateKey, buffer, (err, decrypted) => {
+        if (err) {
+            return res.status(500).send('Error decrypting message');
+        }
 
-    const decryptedMessage = "تم فك التشفير: " + encryptedMessage; // يجب استخدام مكتبة لفك التشفير بشكل حقيقي
-
-    res.json({ message: decryptedMessage });
+        // إعادة الرسالة المفكوك تشفيرها
+        const decryptedMessage = decrypted.toString('utf-8');
+        res.json({ decryptedMessage });
+    });
 });
 
 app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}`);
+    console.log(`Server running at http://localhost:${port}`);
 });
