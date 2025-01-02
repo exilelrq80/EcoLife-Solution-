@@ -191,8 +191,6 @@ form {
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    margin: 0 auto; /* Center the form horizontally */
-    text-align: center; /* Center the text inside */
 }
 
 label {
@@ -231,43 +229,28 @@ button:hover {
 }
 
 /* Custom Form and Output Section */
-body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-    line-height: 1.6;
+#demo-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 50px auto;
+    max-width: 600px;
 }
 
-h1 {
-    color: #2c3e50;
-}
-
-textarea {
+#demo-section form {
     width: 100%;
-    padding: 10px;
-    font-size: 16px;
-}
-
-button {
-    margin-right: 10px;
-    padding: 10px 20px;
-    background-color: #3498db;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #2980b9;
+    margin-bottom: 20px;
 }
 
 #output {
+    width: 100%;
+    margin-top: 20px;
     background-color: #ecf0f1;
     padding: 10px;
     border: 1px solid #bdc3c7;
-    width: 80%; /* Make the output box centered and responsive */
-    max-width: 500px;
-    margin: 20px auto; /* Center the output horizontally */
-    text-align: left; /* Keep the text left-aligned inside */
+    text-align: center;
 }
 
 /* Media Queries for Mobile */
@@ -321,35 +304,3 @@ button:hover {
     }
 }
 
-/* Media Queries for smaller screens */
-@media (max-width: 768px) {
-    body {
-        background-image: url(https://raw.githubusercontent.com/exilelrq80/EcoLife-Solution-/refs/heads/main/img/BG0.jpg);
-    }
-
-    .main h2 {
-        font-size: 1em;
-    }
-
-    .main h3 {
-        font-size: 1em;
-    }
-
-    .main-btn {
-        font-size: 0.9em;
-        padding: 0.8em 1.8em;
-    }
-
-    .card {
-        width: 100%;
-        margin: 10px 0;
-    }
-
-    .footer-title {
-        font-size: 1.1em;
-    }
-
-    .footer .social-icons a {
-        font-size: 1.1em;
-    }
-}
