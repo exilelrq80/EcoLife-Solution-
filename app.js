@@ -78,3 +78,4 @@ document.getElementById('encrypt-button').addEventListener('click', async () => 
         console.log('Decrypted message:', data.decryptedMessage);
     });
 });
+
