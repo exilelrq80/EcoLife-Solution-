@@ -310,9 +310,12 @@ button:hover {
     align-items: center;
     justify-content: center;
     text-align: center;
-    margin: 50px auto;
-    height: 100vh;  /* لتوسيط العنصر في وسط الصفحة عمودياً */
-    max-width: 600px;
+    position: absolute;  /* تجعل العنصر يُوضع بشكل مطلق */
+    top: 50%;  /* يحرك العنصر للأسفل بمقدار 50% من ارتفاع الصفحة */
+    left: 50%;  /* يحرك العنصر لليسار بمقدار 50% من عرض الصفحة */
+    transform: translate(-50%, -50%);  /* يقوم بتعديل الموقع ليصبح في المنتصف تماماً */
+    width: 100%;  /* تأكد من أن العرض يأخذ كامل الشاشة */
+    max-width: 600px;  /* الحد الأقصى للعرض */
 }
 
 #encryption-demo form {
@@ -328,4 +331,3 @@ button:hover {
     border: 1px solid #bdc3c7;
     text-align: center;
 }
-
