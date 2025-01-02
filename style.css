@@ -191,6 +191,8 @@ form {
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 0 auto; /* Center the form horizontally */
+    text-align: center; /* Center the text inside */
 }
 
 label {
@@ -239,10 +241,6 @@ h1 {
     color: #2c3e50;
 }
 
-form {
-    margin-bottom: 20px;
-}
-
 textarea {
     width: 100%;
     padding: 10px;
@@ -266,6 +264,10 @@ button:hover {
     background-color: #ecf0f1;
     padding: 10px;
     border: 1px solid #bdc3c7;
+    width: 80%; /* Make the output box centered and responsive */
+    max-width: 500px;
+    margin: 20px auto; /* Center the output horizontally */
+    text-align: left; /* Keep the text left-aligned inside */
 }
 
 /* Media Queries for Mobile */
@@ -351,4 +353,3 @@ button:hover {
         font-size: 1.1em;
     }
 }
-
