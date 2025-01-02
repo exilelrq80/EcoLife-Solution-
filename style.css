@@ -307,19 +307,18 @@ button:hover {
 #encryption-demo {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    justify-content: center;  /* توسيط عمودي */
+    align-items: center;  /* توسيط أفقي */
     text-align: center;
-    position: absolute;  /* تجعل العنصر يُوضع بشكل مطلق */
-    top: 50%;  /* يحرك العنصر للأسفل بمقدار 50% من ارتفاع الصفحة */
-    left: 50%;  /* يحرك العنصر لليسار بمقدار 50% من عرض الصفحة */
-    transform: translate(-50%, -50%);  /* يقوم بتعديل الموقع ليصبح في المنتصف تماماً */
-    width: 100%;  /* تأكد من أن العرض يأخذ كامل الشاشة */
-    max-width: 600px;  /* الحد الأقصى للعرض */
+    height: 100vh;  /* ملء ارتفاع الشاشة بالكامل */
+    width: 100%;  /* ملء العرض بالكامل */
+    position: relative;  /* يجعل العنصر يتموضع بشكل صحيح */
+    margin: 0 auto;  /* تأكيد التوسيط */
 }
 
 #encryption-demo form {
     width: 100%;
+    max-width: 600px;  /* الحد الأقصى للعرض */
     margin-bottom: 20px;
 }
 
