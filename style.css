@@ -311,6 +311,7 @@ button:hover {
     justify-content: center;
     text-align: center;
     margin: 50px auto;
+    height: 100vh;  /* لتوسيط العنصر في وسط الصفحة عمودياً */
     max-width: 600px;
 }
 
