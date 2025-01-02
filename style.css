@@ -303,4 +303,28 @@ button:hover {
         font-size: 1.2em;
     }
 }
+/* Custom Form and Output Section */
+#encryption-demo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 50px auto;
+    max-width: 600px;
+}
+
+#encryption-demo form {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+#output {
+    width: 100%;
+    margin-top: 20px;
+    background-color: #ecf0f1;
+    padding: 10px;
+    border: 1px solid #bdc3c7;
+    text-align: center;
+}
 
