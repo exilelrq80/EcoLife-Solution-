@@ -43,6 +43,7 @@ document.getElementById('contactFormPost').addEventListener('submit', async func
     );
 
     const decodedMessage = new TextDecoder().decode(decrypted);
+    console.log("Original message:", message);
     console.log("Decrypted message:", decodedMessage );
 });
 
